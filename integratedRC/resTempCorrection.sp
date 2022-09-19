@@ -1,5 +1,5 @@
 .title Resistor Temperature Correction 
-.temp 120
+.temp 27
 
 *n+ polysilicon resistor model 
 .model rpoly_n R rsh=100 tc1=-800u tnom=27C 
