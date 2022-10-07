@@ -1,0 +1,40 @@
+** sch_path: /home/emman/Desktop/Acads/EE220/MOS-Transistor-Characteristics/act4.sch
+**.subckt act4 g1 d1
+*.ipin g1
+*.iopin d1
+XM1 d1 g1 GND GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+**** begin user architecture code
+
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
+.option wnflag = 1 scale=1e-6
+
+vgs g1 0 dc=0.9
+vds d1 0 dc=0.9
+
+.control
+save all
+
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+
+dc vgs 0 1.8 0.01
+let idn = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+plot idn
+
+wrdata mos-nlvt-transfer-ff-l=150nm-w=10um.dat idn
+
+dc vds 0 1.8 0.01 vgs 0.45 1.8 0.45
+let idn = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+plot idn
+
+wrdata mos-nlvt-output-ff-l=150nm-w=10um.dat idn
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
