@@ -26,37 +26,37 @@ lab=d1}
 C {devices/code_shown.sym} 470 -580 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
 .option wnflag = 1 scale=1e-6
 
-vgs g1 0 dc=0.9
-vds d1 0 dc=0.9
+vgs g1 0 dc=-0.9
+vds d1 0 dc=-0.9
 
 .control
 save all
 
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 
-dc vgs 0 1.8 0.01
-let idn = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+dc vgs 0 -1.8 -0.01
+let idn = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 plot idn 
 
-wrdata mos-nlvt-transfer-ss-l=450nm-w=10um.dat idn
+wrdata mos-plvt-transfer-ff-l=350nm-w=10um.dat idn
 
-dc vds 0 1.8 0.01 vgs 0.45 1.8 0.45
-let idn = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+dc vds 0 -1.8 -0.01 vgs -0.45 -1.8 -0.45
+let idn = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 plot idn 
 
-wrdata mos-nlvt-output-ss-l=450nm-w=10um.dat idn
+wrdata mos-plvt-output-ff-l=350nm-w=10um.dat idn
 
 .endc
 " }
 C {devices/ipin.sym} 1090 -360 0 0 {name=p1 lab=g1}
 C {devices/iopin.sym} 1330 -530 0 0 {name=p2 lab=d1}
 C {devices/gnd.sym} 1180 -230 0 0 {name=l3 lab=GND}
-C {sky130_fd_pr/nfet_01v8_lvt.sym} 1160 -360 0 0 {name=M1
-L=0.45
-W=10
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 1160 -360 2 1 {name=M1
+L=0.35
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -65,6 +65,6 @@ as="'int((nf+2)/2) * W/nf * 0.29'"
 ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
 nrd="'0.29 / W'" nrs="'0.29 / W'"
 sa=0 sb=0 sd=0
-model=nfet_01v8_lvt
+model=pfet_01v8_lvt
 spiceprefix=X
 }

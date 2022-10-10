@@ -26,7 +26,7 @@ idn = {}
 
 
 for corner in corners:
-    fname = 'mos-nlvt-transfer-' + corner + '-l=150nm-w=10um.dat'
+    fname = 'mos-plvt-transfer-' + corner + '-l=350nm-w=10um.dat'
     fdir = '/home/emman/Desktop/Acads/EE220/MOS-Transistor-Characteristics/'
     vgs, [idn[corner]] = read_data( fdir + fname, [1])
    
@@ -35,34 +35,36 @@ ax = fig.add_subplot(1, 1, 1)
 for corner in corners:
     ax.plot(vgs, [i/1e-3 for i in idn[corner]], 'o', markersize=1, label = corner.upper())
 
-ax.set_title(r'nfet_01v8_lvt ($W=10\mu m$, $L=0.15\mu m$, $nf=1$ )')
+ax.set_title(r'pfet_01v8_lvt ($W=10\mu m$, $L=0.35\mu m$, $nf=1$ )')
 ax.set_xlabel(r'$V_{GS}$ [V]')
 ax.set_ylabel(r'$I_D$ [mA]')
 ax.legend(loc= 'upper left')
 fig.set_tight_layout('True')
 ax.grid(True)
 ax.grid(linestyle=':')
-plt.savefig('nmos-1v8-lvt-transfer-linear.png', dpi=600)
+plt.gca().invert_xaxis()
+plt.savefig('pmos-1v8-lvt-transfer-linear.png', dpi=600)
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 for corner in corners:
     ax.semilogy(vgs, [i/1e-3 for i in idn[corner]],  'o', markersize=1, label = corner.upper())
     
-ax.set_title(r'nfet_01v8_lvt ($W=10\mu m$, $L=0.15\mu m$, $nf=1$ )')
+ax.set_title(r'pfet_01v8_lvt ($W=10\mu m$, $L=0.35\mu m$, $nf=1$ )')
 ax.set_xlabel(r'$V_{GS}$ [V]')
 ax.set_ylabel(r'$I_D$ [mA]')
 ax.legend(loc= 'upper left')
 fig.set_tight_layout('True')
 ax.grid(True)
 ax.grid(linestyle=':')
-plt.savefig('nmos-1v8-lvt-transfer-log.png', dpi=600)
+plt.gca().invert_xaxis()
+plt.savefig('pmos-1v8-lvt-transfer-log.png', dpi=600)
 
 
 idn2 = {}
 
 for corner in corners:
-    fname = 'mos-nlvt-output-' + corner + '-l=150nm-w=10um.dat'
+    fname = 'mos-plvt-output-' + corner + '-l=350nm-w=10um.dat'
     fdir = '/home/emman/Desktop/Acads/EE220/MOS-Transistor-Characteristics/'
     vds, [idn2[corner]] = read_data( fdir + fname, [1])
 
@@ -71,11 +73,12 @@ ax = fig.add_subplot(1, 1, 1)
 for corner in corners:
     ax.plot(vds, [i/1e-3 for i in idn2[corner]], 'o', markersize=1, label = corner.upper())
 
-ax.set_title(r'nfet_01v8_lvt ($W=10\mu m$, $L=0.15\mu m$, $nf=1$ )')
+ax.set_title(r'pfet_01v8_lvt ($W=10\mu m$, $L=0.35\mu m$, $nf=1$ )')
 ax.set_xlabel(r'$V_{DS}$ [V]')
 ax.set_ylabel(r'$I_D$ [mA]')
 ax.legend(loc= 'upper left')
 fig.set_tight_layout('True')
 ax.grid(True)
 ax.grid(linestyle=':')
-plt.savefig('nmos-1v8-lvt-output.png', dpi=600)
+plt.gca().invert_xaxis()
+plt.savefig('pmos-1v8-lvt-output.png', dpi=600)
