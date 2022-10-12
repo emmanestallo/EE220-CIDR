@@ -41,13 +41,13 @@ dc vgs 0 -1.8 -0.01
 let idn = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 plot idn 
 
-wrdata mos-plvt-transfer-ff-l=350nm-w=10um.dat idn
+wrdata mos-plvt-transfer-ff-l=700nm-w=10um.dat idn
 
 dc vds 0 -1.8 -0.01 vgs -0.45 -1.8 -0.45
 let idn = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 plot idn 
 
-wrdata mos-plvt-output-ff-l=350nm-w=10um.dat idn
+wrdata mos-plvt-output-ff-l=700nm-w=10um.dat idn
 
 .endc
 " }
@@ -55,7 +55,7 @@ C {devices/ipin.sym} 1090 -360 0 0 {name=p1 lab=g1}
 C {devices/iopin.sym} 1330 -530 0 0 {name=p2 lab=d1}
 C {devices/gnd.sym} 1180 -230 0 0 {name=l3 lab=GND}
 C {sky130_fd_pr/pfet_01v8_lvt.sym} 1160 -360 2 1 {name=M1
-L=0.35
+L=1.05
 W=1
 nf=1
 mult=1
