@@ -26,7 +26,7 @@ lab=d1}
 C {devices/code_shown.sym} 470 -580 0 0 {name=NGSPICE
 only_toplevel=true
 value="
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
 .option wnflag = 1 scale=1e-6
 
 vgs g1 0 dc=-0.9
@@ -41,13 +41,13 @@ dc vgs 0 -1.8 -0.01
 let idn = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 plot idn 
 
-wrdata mos-plvt-transfer-ff-l=700nm-w=10um.dat idn
+wrdata mos-plvt-transfer-ss-l=1050nm-w=10um.dat idn
 
 dc vds 0 -1.8 -0.01 vgs -0.45 -1.8 -0.45
 let idn = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 plot idn 
 
-wrdata mos-plvt-output-ff-l=700nm-w=10um.dat idn
+wrdata mos-plvt-output-ss-l=1050nm-w=10um.dat idn
 
 .endc
 " }
