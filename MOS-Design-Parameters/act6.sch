@@ -35,7 +35,7 @@ N 380 -290 380 -200 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 230 -190 0 0 {name=M1
 L=0.15
-W=1
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
