@@ -50,13 +50,14 @@ spiceprefix=X
 C {devices/vsource.sym} 140 -140 0 0 {name=V1 value=0.9
 }
 C {devices/vsource.sym} 380 -170 0 0 {name=V2 value=0.9
+
 }
 C {devices/gnd.sym} 250 -80 0 0 {name=l1 lab=GND}
 C {devices/code.sym} 570 -250 0 0 {name=ngspice 
 only_toplevel=false 
 value=
 "
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
 .option wnflag=1 scale=1e-6
 
 .control 
@@ -70,8 +71,8 @@ dc v1 0 1.8 1m
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
 
-wrdata id-ff.txt id
-wrdata gm-ff.txt gm
+wrdata id-ss.txt id
+wrdata gm-ss.txt gm
 
 .endc
 "}
