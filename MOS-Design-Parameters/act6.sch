@@ -69,11 +69,9 @@ dc v1 0 1.8 1m
 
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-let gmoverid = gm/id 
 
 wrdata id-ff.txt id
 wrdata gm-ff.txt gm
-wrdata gmoverid-ff.txt gmoverid
 
 .endc
 "}

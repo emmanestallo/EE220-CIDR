@@ -7,10 +7,24 @@ for corner in corners:
     gm = np.loadtxt(f'gm-{corner}.txt')[:,1]/1e-3
     plt.plot(vgs,gm,label=corner.upper())
 
-plt.grid()
-plt.title('nfet_01v8_lvt (W=$10\mu$m, L=$0.15\mu$m)')
+plt.grid(linestyle='--')
+plt.title('nfet_01v8_lvt[gm] (W=$10\mu$m, L=$0.15\mu$m)')
 plt.xlabel("$V_{GS}$ [V]") 
 plt.ylabel("$g_m$ [mS]")
 plt.legend(loc='upper left')
-plt.savefig('nfet_01v8_lvt-L=0.15-W=10.png', dpi=600)
+plt.savefig('nfet_01v8_lvt-gm-L=0.15-W=10.png', dpi=600)
+plt.show()
+
+
+for corner in corners: 
+    vgs = np.loadtxt(f'id-{corner}.txt')[:,0]
+    id = np.loadtxt(f'id-{corner}.txt')[:,1]/1e-3
+    plt.plot(vgs,id,label=corner.upper())
+
+plt.grid(linestyle='--')
+plt.title('nfet_01v8_lvt[id] (W=$10\mu$m, L=$0.15\mu$m)')
+plt.xlabel("$V_{GS}$ [V]") 
+plt.ylabel("$I_D$ [mA]")
+plt.legend(loc='upper left')
+plt.savefig('nfet_01v8_lvt-id-L=0.15-W=10.png', dpi=600)
 plt.show()
