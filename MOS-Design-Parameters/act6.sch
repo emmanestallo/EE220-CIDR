@@ -34,7 +34,7 @@ lab=#net2}
 N 380 -290 380 -200 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 230 -190 0 0 {name=M1
-L=0.15
+L=0.30
 W=10
 nf=1
 mult=1
@@ -65,14 +65,24 @@ save all
 
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgd]
 
 dc v1 0 1.8 1m
 
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
+let cgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgs]
+let cgd = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgd]
 
-wrdata id-ss.txt id
-wrdata gm-ss.txt gm
+let gmoverid = gm/id 
+let vstar = 2/gmoverid
+let cgg = cgs+cgd
+let ft = gm/(2*pi*cgg)
+
+wrdata gmoverid-ss.txt gmoverid
+wrdata vstar-ss.txt vstar
+wrdata ft-ss.txt ft
 
 .endc
 "}

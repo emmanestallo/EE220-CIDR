@@ -8,20 +8,22 @@ V2 net2 GND 0.9
 **** begin user architecture code
 
 
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .option wnflag=1 scale=1e-6
 
 .control
 save all
 
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 
-dc v2 0 1.8 1m
+dc v2 0 3.8 1m
 
+let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 let ro = 1/gds
 
-wrdata ro-ss.txt ro
+*wrdata ro-ff.txt ro
 
 .endc
 
