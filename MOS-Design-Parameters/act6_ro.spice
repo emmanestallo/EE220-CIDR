@@ -1,0 +1,32 @@
+** sch_path: /home/emman/Desktop/Acads/EE220/MOS-Design-Parameters/act6_ro.sch
+**.subckt act6_ro
+XM1 net2 net1 GND GND sky130_fd_pr__nfet_01v8_lvt L=0.15 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+V1 net1 GND 0.45
+V2 net2 GND 0.9
+**** begin user architecture code
+
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
+.option wnflag=1 scale=1e-6
+
+.control
+save all
+
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
+
+dc v2 0 1.8 1m
+
+let gds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
+let ro = 1/gds
+
+wrdata ro-ss.txt ro
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
