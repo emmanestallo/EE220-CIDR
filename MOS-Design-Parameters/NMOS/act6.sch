@@ -34,7 +34,7 @@ lab=#net2}
 N 380 -290 380 -200 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 230 -190 0 0 {name=M1
-L=0.30
+L=0.15
 W=10
 nf=1
 mult=1
@@ -57,7 +57,7 @@ C {devices/code.sym} 570 -250 0 0 {name=ngspice
 only_toplevel=false 
 value=
 "
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
 .option wnflag=1 scale=1e-6
 
 .control 
@@ -80,9 +80,9 @@ let vstar = 2/gmoverid
 let cgg = cgs+cgd
 let ft = gm/(2*pi*cgg)
 
-wrdata gmoverid-ss.txt gmoverid
-wrdata vstar-ss.txt vstar
-wrdata ft-ss.txt ft
+*wrdata gmoverid-ff.txt gmoverid
+wrdata vstar-ff.txt vstar
+*wrdata ft-ff.txt ft
 
 .endc
 "}

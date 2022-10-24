@@ -2,7 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 corners = ['ss','tt','ff']
-length = 0.30
+length = 0.15
+'''
 for corner in corners: 
     vgs = np.loadtxt(f'gmoverid-{corner}.txt')[:,0]
     gmoverid = np.loadtxt(f'gmoverid-{corner}.txt')[:,1]
@@ -44,6 +45,23 @@ plt.ylabel("$f_t \cdot g_m/I_D$ [$GHz/V$]")
 plt.legend(loc='upper right')
 plt.savefig(f'nfet_01v8_lvt-AFOM_vstar-L={length}-W=10.png', dpi=600)
 plt.show()
+'''
+
+for corner in corners: 
+    vgs = np.loadtxt(f'vstar-{corner}.txt')[:,0]
+    vstar = np.loadtxt(f'vstar-{corner}.txt')[:,1]
+    gmoverid = 2/vstar 
+    plt.plot(vstar,vgs,label=corner.upper())
+
+plt.grid(linestyle='--')
+plt.title('nfet_01v8_lvt[$V_{GS}$] (W=$10\mu m$,' +' ' f'L=${length}\mu m$)')
+plt.xlabel("$V^*$ [V]") 
+plt.ylabel("$V_{GS}$ [$V$]")
+plt.legend(loc='lower right')
+plt.savefig(f'nfet_01v8_lvt-vstar_VGS-L={length}-W=10.png', dpi=600)
+plt.show()
+
+
 '''
 ----------------------------------------------------------
 corners = ['ss','tt','ff']
