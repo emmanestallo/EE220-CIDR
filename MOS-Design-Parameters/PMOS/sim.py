@@ -62,22 +62,21 @@ plt.savefig(f'nfet_01v8_lvt-vstar_VGS-L={length}-W=10.png', dpi=600)
 plt.show()
 '''
 
-'''
-----------------------------------------------------------
+
 corners = ['ss','tt','ff']
 for corner in corners: 
-    vds = np.loadtxt(f'ro-{corner}.txt')[:,0]
+    vsd = np.loadtxt(f'ro-{corner}.txt')[:,0]
     ro = np.loadtxt(f'ro-{corner}.txt')[:,1]/1e3
-    plt.plot(vds,ro,label=corner.upper())
+    plt.plot(vsd,ro,label=corner.upper())
 
 plt.grid(linestyle='--')
-plt.title('nfet_01v8_lvt[ro] (W=$10\mu$m, L=$0.15\mu$m)')
-plt.xlabel("$V_{DS}$ [V]") 
+plt.title('pfet_01v8_lvt[ro] (W=$10\mu$m, L=$0.35\mu$m)')
+plt.xlabel("$V_{SD}$ [V]") 
 plt.ylabel("$r_o$ [k$\Omega$]")
 plt.legend(loc='upper left')
-plt.savefig('nfet_01v8_lvt-ro-L=0.15-W=10.png', dpi=600)
+plt.savefig('pfet_01v8_lvt-ro-L=0.35-W=10.png', dpi=600)
 plt.show()
-
+'''
 ----------------------------------------------------------
 
 for corner in corners: 
@@ -106,17 +105,19 @@ plt.ylabel("$g_m$ [mS]")
 plt.legend(loc='upper left')
 plt.savefig('pfet_01v8_lvt-gm-L=0.35-W=10.png', dpi=600)
 plt.show()
-'''
+
 
 for corner in corners: 
     vsg = np.loadtxt(f'ftgmid-{corner}.txt')[:,0]
-    gmoverid = np.loadtxt(f'ftgmid-{corner}.txt')[:,1]/1e9
-    plt.plot(vsg,gmoverid,label=corner.upper())
+    ftgmoverid = np.loadtxt(f'ftgmid-{corner}.txt')[:,1]/1e9
+    vstar = np.loadtxt(f'ftgmid-{corner}.txt')[:,3]
+    plt.plot(vstar,ftgmoverid,label=corner.upper())
 
 plt.grid(linestyle='--')
-plt.title('pfet_01v8_lvt[$f_t\cdot g_m/I_D$] (W=$10\mu$m, L=$0.50\mu$m)')
-plt.xlabel("$V_{SG}$ [V]") 
+plt.title('pfet_01v8_lvt[$f_t\cdot g_m/I_D$] (W=$10\mu$m, L=$0.70\mu$m)')
+plt.xlabel("$V^{*}$ [V]") 
 plt.ylabel("$f_t\cdot g_m/I_D$ [$GHz/V$]")
 plt.legend(loc='upper right')
-plt.savefig('pfet_01v8_lvt-ftgmid-L=0.50-W=10.png', dpi=600)
+plt.savefig('pfet_01v8_lvt-AFOM_vstar-L=0.70-W=10.png', dpi=600)
 plt.show()
+'''

@@ -58,23 +58,25 @@ C {devices/code.sym} 690 -1260 0 0 {name=NGSPICE
 only_toplevel=false 
 value="
 
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
 .option wnflag=1 scale=1e-6
 
 .control 
 
 save all
+
 save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gm] 
 
-dc v1 0 1.8 1m
+
+dc v1 -0.2 1.8 1m
 
 let id = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gm]
 
 let gmoverid = gm/id 
 
-wrdata gmoverid-ss.txt gmoverid
+#wrdata ftgmid-ss.txt ftgmid vstar
 
 .endc
 "}

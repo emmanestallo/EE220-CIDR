@@ -47,7 +47,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8_lvt
 spiceprefix=X
 }
-C {devices/vsource.sym} 140 -140 0 0 {name=V1 value=1.35
+C {devices/vsource.sym} 140 -140 0 0 {name=V1 value=0.45
 }
 C {devices/vsource.sym} 380 -170 0 0 {name=V2 value=0.9
 
@@ -57,7 +57,7 @@ C {devices/code.sym} 570 -250 0 0 {name=ngspice
 only_toplevel=false 
 value=
 "
-.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ff
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss
 .option wnflag=1 scale=1e-6
 
 .control 
@@ -70,7 +70,7 @@ dc v2 0 1.8 1m
 let gds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 let ro = 1/gds
 
-wrdata ro-ff.txt ro
+#wrdata ro-ff.txt ro
 
 .endc
 "}

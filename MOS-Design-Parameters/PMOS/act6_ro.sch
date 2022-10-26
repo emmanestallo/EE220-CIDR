@@ -52,7 +52,7 @@ model=pfet_01v8_lvt
 spiceprefix=X
 }
 C {devices/gnd.sym} 320 -1260 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 400 -1250 0 0 {name=V1 value=0.9}
+C {devices/vsource.sym} 400 -1250 0 0 {name=V1 value=1.35}
 C {devices/vsource.sym} 600 -1240 0 0 {name=V2 value=0.9}
 C {devices/code.sym} 690 -1260 0 0 {name=NGSPICE
 only_toplevel=false 
@@ -64,16 +64,14 @@ value="
 .control 
 
 save all
-save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
-save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gm] 
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gds] 
 
-dc v1 0 1.8 1m
+dc v2 0 1.8 1m
 
-let id = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
-let gm = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gm]
+let gds = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gds]
+let ro = 1/gds
 
-wrdata id-ff.txt id 
-wrdata gm-ff.txt gm
+wrdata ro-ff.txt ro
 
 .endc
 "}
