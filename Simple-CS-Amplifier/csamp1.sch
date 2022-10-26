@@ -48,7 +48,7 @@ lab=#net3}
 N 520 -260 520 -200 {
 lab=GND}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 300 -210 0 0 {name=M1
-L=0.40
+L=0.20
 W=40
 nf=1
 mult=1
@@ -78,23 +78,18 @@ value="
 
 .control
 save all
+
+
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 
 dc VDS 0.2 1.8 1m 
 
 let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
-let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-let gds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
-let ro = 1/gds 
-
-let gain = gm*ro
+let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
 
 let ao = -1/(deriv(vgs))
 
-plot ao
+wrdata ao-L=0.20.txt ao
 .endc
 "}
