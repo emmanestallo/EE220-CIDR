@@ -48,7 +48,7 @@ lab=#net3}
 N 520 -260 520 -200 {
 lab=GND}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 300 -210 0 0 {name=M1
-L=0.20
+L=0.40
 W=40
 nf=1
 mult=1
@@ -90,6 +90,6 @@ let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 
 let ao = -1/(deriv(vgs))
 
-wrdata ao-L=0.20.txt ao
+wrdata ao-L=0.40.txt ao
 .endc
 "}
