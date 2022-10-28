@@ -4,16 +4,16 @@
 *.iopin vdd
 *.iopin vdd
 *.opin out
-XM1 net2 net1 GND GND sky130_fd_pr__nfet_01v8_lvt L='length' W=21 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM1 net2 net1 GND GND sky130_fd_pr__nfet_01v8_lvt L=0.30 W=21 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
 E1 net1 GND net2 net3 1000
 I0 vdd net2 314u
 VDS net3 GND 0.9
 V2 vdd GND 1.8
-XM2 out net4 GND GND sky130_fd_pr__nfet_01v8_lvt L='length' W=21 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 out net4 GND GND sky130_fd_pr__nfet_01v8_lvt L=0.30 W=21 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
 I1 vdd out 314u
 V1 net4 net1 SIN(0 1m 1k) AC 1
 C1 out GND 5p m=1
@@ -23,7 +23,6 @@ C1 out GND 5p m=1
 
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .option wnflag=1 scale=1e-6
-.param length = 0.30
 
 .control
 save all

@@ -78,7 +78,7 @@ lab=out}
 N 660 -170 660 -120 {
 lab=GND}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 300 -210 0 0 {name=M1
-L='length'
+L=0.30
 W=21
 nf=1
 mult=1
@@ -105,7 +105,6 @@ value="
 
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .option wnflag=1 scale=1e-6
-.param length = 0.30
 
 .control
 save all
@@ -137,7 +136,7 @@ plot ao
 C {devices/iopin.sym} 320 -380 0 0 {name=p1 lab=vdd}
 C {devices/iopin.sym} 810 -360 0 0 {name=p1 lab=vdd}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 520 -210 0 0 {name=M2
-L='length'
+L=0.30
 W=21
 nf=1
 mult=1
