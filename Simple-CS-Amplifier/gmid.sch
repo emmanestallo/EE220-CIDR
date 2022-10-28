@@ -29,7 +29,7 @@ N 780 -530 780 -430 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 620 -420 0 0 {name=M1
 L=0.30
-W=1
+W=21
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -70,7 +70,6 @@ let vstar = 2/gmoverid
 
 plot id vs vstar
 
-wrdata vstar.txt vstar id
 
 .endc
 "}

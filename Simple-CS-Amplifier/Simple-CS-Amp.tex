@@ -33,6 +33,7 @@ emmanuel.estallo@eee.upd.edu.ph}}
 	\item Unity-gain frequency: $f_u=100MHz$, $C_L=5pF$
 	\item $V^{*}=200mV$
 \end{itemize}
+\subsection{Selecting $I_D$}
 The transconductance can be obtained from:
 \begin{equation*}
 	g_m = 2\pi f_u C_L
@@ -52,14 +53,38 @@ and a $V^*$ of $200\; mV$ corresponds to a $g_m/I_D$ of 10.
 \begin{equation*}
 	I_D = 314\; \mu A
 \end{equation*}
+\subsection{Choosing the length}
+To find the appropiate length, I did a DC sweep on VGS and checked if the intrinsic gain at 
+$V^*$ is $> 40$.  
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{schem.png}
+	\caption{Schematic diagram}
+	\label{schematic}
+\end{figure}
+At the minimum length, the intrinsic gain is lower than what is desired. We select $L=0.30\mu m$ since it satisfies the specifications. $L=0.25\mu m$ also meets the specifications, however, for a greater swing, the larger length is selected. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.40]{gmro.png}
+	\caption{Intrinsic gain}
+	\label{gmro}
+\end{figure}
 The $V^*$ vs $I_D$ plot for a transistor with $W=1\mu m$, $L=0.30 \mu m$ is shown below. 
 \begin{figure}[H]
 	\centering 
-	\includegraphics[width=\columnwidth]{vstar-id.png}
-	\caption{$I_D$ vs $V^*$}
+	\includegraphics[scale=0.38]{vstar-id.png}
+	\caption{$I_D$ vs $V^*$, $W=1\mu m$}
 	\label{vstar-id}
 \end{figure}
-To get the desired $I_D$, the width should be multiplied by 21. 
+\subsection{Scaling the width}
+A python script is used to calculate the scale factor $k_W$ to achieve the required $I_D$. The width is multiplied to the scaling factor. This also scales $I_D$. For this activity, $k_W=21$.
+To check, a MEAS directive is used. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{vstar-scale-id.png}
+	\caption{$I_D$ vs $V^*$, $W=21\mu m$}
+	\label{vstar-scale-id}
+\end{figure}
 
 
 \end{document} 

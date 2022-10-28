@@ -111,19 +111,24 @@ value="
 save all
 
 
-*save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-*save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 
 
-*dc VDS 0.2 1.8 1m 
+dc VDS 0.2 1.8 1m 
 
 
-*let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-*let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
+let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
 
-tran 10u 10m 
+let a = deriv(vgs) 
+let ao = -1/a
 
-plot v(out)
+plot ao
+
+*tran 10u 10m 
+
+*plot v(out)
 
 
 *wrdata ao-L=0.40.txt ao

@@ -3,8 +3,8 @@
 XM1 net2 net1 GND GND sky130_fd_pr__nfet_01v8_lvt L=0.30 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
 + pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
 + sa=0 sb=0 sd=0 mult=1 m=1
-V1 net1 GND 0.9
-V2 net2 GND 0.9
+VGS net1 GND 0.9
+VDS net2 GND 0.9
 **** begin user architecture code
 
 
@@ -18,7 +18,7 @@ save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 
-dc v1 0 1.8 1m
+dc VGS 0 1.8 1m
 
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
@@ -26,10 +26,11 @@ let ro = 1/@m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
 
 let gmoverid = gm/id
 let vstar = 2/gmoverid
+let gmro = gm*ro
+
 
 plot id vs vstar
 
-wrdata vstar.txt vstar id
 
 .endc
 
