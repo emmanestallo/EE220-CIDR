@@ -99,7 +99,7 @@ C {devices/gnd.sym} 200 -100 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 320 -100 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} 810 -270 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 810 -180 0 0 {name=l1 lab=GND}
-C {devices/code.sym} 70 -480 0 0 {name=NGSPICE 
+C {devices/code.sym} 70 -550 0 0 {name=NGSPICE 
 only_toplevel=false 
 value="
 
@@ -110,28 +110,23 @@ value="
 save all
 
 
-save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
-save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds]
-save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gm]
-save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[ro]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds]
 
+ac dec 10 1 1G
 
-dc V1 0 1.8 1m 
-
-
-let vgs = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
-let vds = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds] 
-let gm = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gm]
-let ro = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[ro]
+*let vgs = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
+*let vds = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds] 
 
 *let a = deriv(vgs) 
 *let ao = -1/a
 
-plot gm*ro
 
 *tran 10u 10m 
 
-plot v(out)
+*plot ao
+
+plot vdb(out)
 
 
 *wrdata ao-L=0.40.txt ao
