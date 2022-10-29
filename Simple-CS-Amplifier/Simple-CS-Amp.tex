@@ -78,7 +78,7 @@ The $V^*$ vs $I_D$ plot for a transistor with $W=1\mu m$, $L=0.30 \mu m$ is show
 \end{figure}
 \subsection{Scaling the width}
 A python script is used to calculate the scale factor $k_W$ to achieve the required $I_D$. The width is scaled using $k_W$. Multiplying the width by $k_W$ scales $I_D$ by approximately the same factor. For this activity, $k_W=21$.
-To check, a MEAS directive is used. The required current is $I_D=314\mu A$, what we got after scaling the width is $345\mu A$, which is quite close. 
+To check, a MEAS directive is used. The required current is $I_D=314\mu A$, what we got is $I_D=345\mu A$, which is quite close. 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=\columnwidth]{vstar-scale-id.png}
@@ -124,6 +124,22 @@ which is $\approx 60\; V/V$
 	\caption{Magnitude response}
 	\label{vdb}
 \end{figure}
+\subsection{Discussions}
+These are my expected results. Since some values are estimated, there are slight deviations with the desired specifications. 
+
+\vspace{8pt}
+\section{CS Amplifier with High $f_t$} 
+To get a high $f_t$, we need a high $I_D$ and small $L$. Decreasing $L$ increases $f_t$ if $I_D$
+is kept constant. However, since there are no constraints on area and how high $I_D$ could be, the limit would be related to the maximum $W$ that can be used on the PDK. 
+
+\subsection{Selecting the width}
+For this PDK, the highest width that can be used is $W=99.9\mu m$. We use this value to get 
+the maximum $I_D$. 
+
+\newpage 
+\subsection{Choosing $V^*$ and $L$}
+
+
 
 
 \end{document} 

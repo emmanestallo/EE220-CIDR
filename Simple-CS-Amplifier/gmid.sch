@@ -28,8 +28,8 @@ lab=#net2}
 N 780 -530 780 -430 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 620 -420 0 0 {name=M1
-L=0.30
-W=1
+L=0.25
+W=99.9
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -54,23 +54,32 @@ value="
 .option wnflag=1 scale=1e-6
 
 .control 
+
 save all 
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[w]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
 
 dc VGS 0 1.8 1m
 
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
 let ro = 1/@m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
+let width = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[w]
+let cgg = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
 
 let gmoverid = gm/id 
 let vstar = 2/gmoverid
 let gmro = gm*ro
+let ft = gm/(2*pi*cgg)
 
 
-plot id vs vstar
+*meas DC gain FIND gmro WHEN vstar=0.3
+*meas DC freq FIND ft WHEN vstar=0.3 
+*meas DC current FIND id WHEN vstar=0.3
+
 
 
 .endc
