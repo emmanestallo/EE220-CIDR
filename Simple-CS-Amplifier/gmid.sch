@@ -43,7 +43,7 @@ spiceprefix=X
 }
 C {devices/vsource.sym} 540 -370 0 0 {name=VGS value=0.9}
 C {devices/gnd.sym} 640 -340 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 780 -400 0 0 {name=VDS value=0.9}
+C {devices/vsource.sym} 780 -400 0 0 {name=VDS value=0.7}
 C {devices/gnd.sym} 540 -320 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 780 -340 0 0 {name=l1 lab=GND}
 C {devices/code.sym} 270 -490 0 0 {name=NGSPICE 
@@ -75,6 +75,10 @@ let vstar = 2/gmoverid
 let gmro = gm*ro
 let ft = gm/(2*pi*cgg)
 
+wrdata charac-L=0.25.txt ft gmro vstar
+
+*meas dc gain find gmro when vstar=0.19
+*meas dc freq find ft when vstar=0.19
 
 *meas DC gain FIND gmro WHEN vstar=0.3
 *meas DC freq FIND ft WHEN vstar=0.3 

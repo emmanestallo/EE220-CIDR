@@ -140,6 +140,27 @@ the maximum $I_D$.
 \subsection{Choosing the length and $V^*$}
 Ideally for the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. We use Fig. \ref{schematic} to determine the appropriate length and $V^*$. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. We use $V_{DS}=0.7V$ for the simulation. 
 
+\vspace{8pt}
+\subsubsection{$a_o$ vs $V^*$} 
+For $0.20\mu m \leq L \leq 0.25\mu m$, the $a_o$ vs $V^*$ plot is shown below. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{vstar-ao-maxft.png}
+	\caption{Intrinsic gain}
+	\label{vstar-ao-2}	
+\end{figure}
+Since we need $a_o > 40$, only lengths $\geq 0.22\mu m$ can be used. 
+
+\vspace{8pt}
+\subsubsection{$f_t$ vs $V^*$} 
+To trim down the possible options, we use the plot below. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{vstar-ft-maxft.png}
+	\caption{Transition frequency}
+	\label{vstar-ft-2}	
+\end{figure}
+Considering the two plots, we choose $V^*=0.19V$ and $L=0.23\mu m$ since it has the best $f_t$. The gain and swing at these values are also within the desired specifications. 
 
 
 

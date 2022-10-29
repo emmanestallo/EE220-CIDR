@@ -6,11 +6,22 @@ lengths = ['0.20','0.21','0.22','0.23','0.24','0.25']
 for length in lengths: 
     ft = np.loadtxt(f'charac-L={length}.txt')[:,1]/1e9
     vstar = np.loadtxt(f'charac-L={length}.txt')[:,5] 
-    plt.plot(vstar,ft,label=length,ncol=3) 
+    plt.plot(vstar,ft,label=length) 
 
 plt.title('nfet_01v8_lvt $(W=99.9\mu m, V_{DS} = 0.7mV)$')
 plt.legend(loc='lower right',ncol=3)
 plt.ylabel('$f_t$ [GHz]')
+plt.xlabel('$V^* [V]$')
+plt.grid(linestyle='--')
+
+for length in lengths: 
+    ao = np.loadtxt(f'charac-L={length}.txt')[:,3]
+    vstar = np.loadtxt(f'charac-L={length}.txt')[:,5] 
+    plt.plot(vstar,ao,label=length) 
+
+plt.title('nfet_01v8_lvt $(W=99.9\mu m, V_{DS} = 0.7mV)$')
+plt.legend(loc='lower right',ncol=3)
+plt.ylabel('$a_o$ [V/V]')
 plt.xlabel('$V^* [V]$')
 plt.grid(linestyle='--')
 plt.show()
