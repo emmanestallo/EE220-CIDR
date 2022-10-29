@@ -77,13 +77,34 @@ The $V^*$ vs $I_D$ plot for a transistor with $W=1\mu m$, $L=0.30 \mu m$ is show
 	\label{vstar-id}
 \end{figure}
 \subsection{Scaling the width}
-A python script is used to calculate the scale factor $k_W$ to achieve the required $I_D$. The width is multiplied to the scaling factor. This also scales $I_D$. For this activity, $k_W=21$.
-To check, a MEAS directive is used. 
+A python script is used to calculate the scale factor $k_W$ to achieve the required $I_D$. The width is scaled using $k_W$. Multiplying the width by $k_W$ scales $I_D$ by approximately the same factor. For this activity, $k_W=21$.
+To check, a MEAS directive is used. The required current is $I_D=314\mu A$, what we got after scaling the width is $345\mu A$, which is quite close. 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=\columnwidth]{vstar-scale-id.png}
 	\caption{$I_D$ vs $V^*$, $W=21\mu m$}
 	\label{vstar-scale-id}
+\end{figure}
+\subsection{Output and input swing}
+
+
+
+
+\subsection{AC analysis}
+The circuit that is used to get the magnitude response is shown below. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{schem_large.png}
+	\caption{Schematic}
+	\label{schem-large}
+\end{figure}
+An AC sweep from $1 Hz$ to $1GHz$ is used to obtain Fig. \ref{vdb}. Using a MEAS directive, $f_u=104MHz$ which is close to our desired $f_u$. At low frequencies, the gain is $\approx 35dB$
+which is $\approx 60\; V/V$
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{vdb.png}
+	\caption{Magnitude response}
+	\label{vdb}
 \end{figure}
 
 

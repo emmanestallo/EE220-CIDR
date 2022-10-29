@@ -110,24 +110,28 @@ value="
 save all
 
 
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
+save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds]
+save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gm]
+save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[ro]
 
 
-dc VDS 0.2 1.8 1m 
+dc V1 0 1.8 1m 
 
 
-let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
+let vgs = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
+let vds = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds] 
+let gm = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gm]
+let ro = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[ro]
 
-let a = deriv(vgs) 
-let ao = -1/a
+*let a = deriv(vgs) 
+*let ao = -1/a
 
-plot ao
+plot gm*ro
 
 *tran 10u 10m 
 
-*plot v(out)
+plot v(out)
 
 
 *wrdata ao-L=0.40.txt ao
@@ -152,7 +156,7 @@ spiceprefix=X
 C {devices/isource.sym} 540 -310 0 0 {name=I1 value=314u}
 C {devices/iopin.sym} 540 -380 0 0 {name=p1 lab=vdd}
 C {devices/gnd.sym} 540 -120 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 450 -210 1 0 {name=V1 value="SIN(0 1m 1k) AC 1"}
+C {devices/vsource.sym} 450 -210 1 0 {name=V1 value="AC 1 DC 0"}
 C {devices/opin.sym} 700 -260 0 0 {name=p1 lab=out}
 C {devices/capa.sym} 660 -200 0 0 {name=C1
 m=1
