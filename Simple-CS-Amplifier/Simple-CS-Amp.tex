@@ -106,7 +106,7 @@ at $V_{DS}\approx 0.52$, $a_o \geq 40$.
 	\label{swing-out}
 \end{figure}
 \subsubsection{Input Swing}
-at $V_{GS}\approx 0.70$, $a_o \geq 40$. 
+at $V_{GS}\approx 0.71$, $a_o \geq 40$. 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[scale=0.3]{ao-vgs.png}
@@ -137,7 +137,9 @@ For this PDK, the highest width that can be used is $W=99.9\mu m$. We use this v
 the maximum $I_D$. 
 
 \newpage 
-\subsection{Choosing $V^*$ and $L$}
+\subsection{Choosing the length and $V^*$}
+Ideally for the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. We use Fig. \ref{schematic} to determine the appropriate length and $V^*$. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. We use $V_{DS}=0.7V$ for the simulation. 
+
 
 
 

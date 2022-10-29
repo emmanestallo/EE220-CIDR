@@ -4,7 +4,7 @@ XM1 net2 net1 GND GND sky130_fd_pr__nfet_01v8_lvt L=0.25 W=99.9 nf=1 ad='int((nf
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 VGS net1 GND 0.9
-VDS net2 GND 0.9
+VDS net2 GND 0.7
 **** begin user architecture code
 
 
@@ -34,8 +34,10 @@ let vstar = 2/gmoverid
 let gmro = gm*ro
 let ft = gm/(2*pi*cgg)
 
+wrdata charac-L=0.25.txt ft gmro vstar
 
-plot ft vs vstar
+*meas dc gain find gmro when vstar=0.19
+*meas dc freq find ft when vstar=0.19
 
 *meas DC gain FIND gmro WHEN vstar=0.3
 *meas DC freq FIND ft WHEN vstar=0.3

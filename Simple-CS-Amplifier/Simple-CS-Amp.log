@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.27)  29 OCT 2022 22:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.27)  29 OCT 2022 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -485,22 +485,22 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 36.
 
-<schem.png, id=48, 549.05125pt x 474.77374pt>
+<schem.png, id=52, 549.05125pt x 474.77374pt>
 File: schem.png Graphic file (type png)
 <use schem.png>
 Package pdftex.def Info: schem.png  used on input line 61.
 (pdftex.def)             Requested size: 252.0pt x 217.90594pt.
-<gmro.png, id=50, 552.0625pt x 497.86pt>
+<gmro.png, id=54, 552.0625pt x 497.86pt>
 File: gmro.png Graphic file (type png)
 <use gmro.png>
 Package pdftex.def Info: gmro.png  used on input line 68.
 (pdftex.def)             Requested size: 220.82108pt x 199.14047pt.
-<vstar-id.png, id=51, 600.2425pt x 501.875pt>
+<vstar-id.png, id=55, 600.2425pt x 501.875pt>
 File: vstar-id.png Graphic file (type png)
 <use vstar-id.png>
 Package pdftex.def Info: vstar-id.png  used on input line 75.
 (pdftex.def)             Requested size: 228.09451pt x 190.71448pt.
-<vstar-scale-id.png, id=52, 1102.1175pt x 494.84875pt>
+<vstar-scale-id.png, id=56, 1102.1175pt x 494.84875pt>
 File: vstar-scale-id.png Graphic file (type png)
 <use vstar-scale-id.png>
 Package pdftex.def Info: vstar-scale-id.png  used on input line 84.
@@ -509,22 +509,22 @@ Package pdftex.def Info: vstar-scale-id.png  used on input line 84.
 
 
  <./schem.png> <./gmro.png> <./vstar-id.png>]
-<schem_large.png, id=77, 851.18pt x 409.53pt>
+<schem_large.png, id=81, 851.18pt x 409.53pt>
 File: schem_large.png Graphic file (type png)
 <use schem_large.png>
 Package pdftex.def Info: schem_large.png  used on input line 91.
 (pdftex.def)             Requested size: 252.0pt x 121.24147pt.
-<ao-vds.png, id=79, 598.235pt x 498.86375pt>
+<ao-vds.png, id=83, 598.235pt x 498.86375pt>
 File: ao-vds.png Graphic file (type png)
 <use ao-vds.png>
 Package pdftex.def Info: ao-vds.png  used on input line 104.
 (pdftex.def)             Requested size: 179.47188pt x 149.66028pt.
-<ao-vgs.png, id=80, 597.23125pt x 499.8675pt>
+<ao-vgs.png, id=84, 597.23125pt x 499.8675pt>
 File: ao-vgs.png Graphic file (type png)
 <use ao-vgs.png>
 Package pdftex.def Info: ao-vgs.png  used on input line 112.
 (pdftex.def)             Requested size: 179.17075pt x 149.9614pt.
-<vdb.png, id=83, 1367.1075pt x 502.87875pt>
+<vdb.png, id=87, 1367.1075pt x 502.87875pt>
 File: vdb.png Graphic file (type png)
 <use vdb.png>
 Package pdftex.def Info: vdb.png  used on input line 123.
@@ -557,14 +557,6 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 140.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 140.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 140.
-
-
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
 
@@ -575,33 +567,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
 [3
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
  (./Simple-CS-Amp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
-
-
-Package rerunfilecheck Warning: File `Simple-CS-Amp.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Simple-CS-Amp.out':
-(rerunfilecheck)             Before: 8181300D7D681E552E6576778BEADAF7;704
-(rerunfilecheck)             After:  FE13300E3176EDE6D06E46E66DC938CD;771.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
+Package rerunfilecheck Info: File `Simple-CS-Amp.out' has not changed.
+(rerunfilecheck)             Checksum: 9EEC09BE6D410C146186841F33073E27;780.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 147.
  ) 
 Here is how much of TeX's memory you used:
- 9113 strings out of 483183
- 136297 string characters out of 5966291
+ 9114 strings out of 483183
+ 136313 string characters out of 5966291
  398691 words of memory out of 5000000
- 23958 multiletter control sequences out of 15000+600000
+ 23959 multiletter control sequences out of 15000+600000
  564301 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,37p,266b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,37p,395b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -615,10 +600,10 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on Simple-CS-Amp.pdf (3 pages, 250204 bytes).
+Output written on Simple-CS-Amp.pdf (3 pages, 250770 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 157 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  24 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
