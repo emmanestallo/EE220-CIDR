@@ -199,6 +199,16 @@ The maximum swing is $8mV$.
 	\caption{$a_o$ vs $V_{GS}$}
 	\label{ao-fumax-vgs}	
 \end{figure}
+\subsection{Discussions}
+First, the choice of $V^*$ depends on both gain and desired $f_t$. If we increase $V^*$, we 
+can get a higher $f_t$ but the gain will decrease. To maximize $f_t$, The maximum $V^*$ that 
+satisfies both gain and swing should be chosen. This amplifier is designed to have an approximate output swing of $\pm 200mV$ with a DC level of $0.9V$ because of $f_t$ constraints. 
+
+\vspace{8pt}
+The first design has $I_D = 314\mu A$. For this design, $I_D=1.95mA$. The $I_D$ is more than 6 times higher. RF applications would benefit from a high $f_u$ but this might not be usable at all because of very high current consumption. 
+
+
+
 
 
 
