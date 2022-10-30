@@ -54,7 +54,7 @@ and a $V^*$ of $200\; mV$ corresponds to a $g_m/I_D$ of 10.
 	I_D = 314\; \mu A
 \end{equation*}
 \subsection{Choosing the length}
-To find the appropiate length, I did a DC sweep on VGS and checked if the intrinsic gain at 
+To find the appropriate length, I did a DC sweep on VGS and checked if the intrinsic gain at 
 $V^*$ is $> 40$.  
 \begin{figure}[H]
 	\centering 
@@ -62,7 +62,7 @@ $V^*$ is $> 40$.
 	\caption{Schematic diagram}
 	\label{schematic}
 \end{figure}
-At the minimum length, the intrinsic gain is lower than what is desired. We select $L=0.30\mu m$ since it satisfies the specifications. $L=0.25\mu m$ also meets the specifications, however, for a greater swing, the larger length is selected. 
+At the minimum length, the intrinsic gain is lower than what is desired. We select $L=0.30\mu m$ since it satisfies the specifications. $L=0.25\mu m$ also meets the specifications. However, for a greater swing, the larger length is selected. 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[scale=0.40]{gmro.png}
@@ -77,7 +77,7 @@ The $V^*$ vs $I_D$ plot for a transistor with $W=1\mu m$, $L=0.30 \mu m$ is show
 	\label{vstar-id}
 \end{figure}
 \subsection{Scaling the width}
-A python script is used to calculate the scale factor $k_W$ to achieve the required $I_D$. The width is scaled using $k_W$. Multiplying the width by $k_W$ scales $I_D$ by approximately the same factor. For this activity, $k_W=21$.
+A python script is used to calculate the scale factor $k_W$ that meets the required $I_D$. The width is scaled using $k_W$. Multiplying the width by $k_W$ scales $I_D$ by approximately the same factor. For this activity, $k_W=21$.
 To check, a MEAS directive is used. The required current is $I_D=314\mu A$, what we got is $I_D=345\mu A$, which is quite close. 
 \begin{figure}[H]
 	\centering 
@@ -138,7 +138,7 @@ the maximum $I_D$.
 
 \newpage 
 \subsection{Choosing the length and $V^*$}
-Ideally for the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. We use Fig. \ref{schematic} to determine the appropriate length and $V^*$. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. We use $V_{DS}=0.7V$ for the simulation. 
+Ideally to get the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. We use Fig. \ref{schematic} to determine the appropriate length and $V^*$. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. We use $V_{DS}=0.7V$ for the simulation. 
 
 \vspace{8pt}
 \subsubsection{$a_o$ vs $V^*$} 

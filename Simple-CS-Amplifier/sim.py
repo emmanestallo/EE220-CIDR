@@ -20,7 +20,7 @@ for length in lengths:
     plt.plot(vstar,ao,label=length) 
 
 plt.title('nfet_01v8_lvt $(W=99.9\mu m, V_{DS} = 0.7mV)$')
-plt.legend(loc='lower right',ncol=3)
+#plt.legend(loc='lower right',ncol=3)
 plt.ylabel('$a_o$ [V/V]')
 plt.xlabel('$V^* [V]$')
 plt.grid(linestyle='--')
