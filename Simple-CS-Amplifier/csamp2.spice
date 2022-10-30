@@ -25,18 +25,18 @@ C1 out GND 5p m=1
 .option wnflag=1 scale=1e-6
 
 .control
-save all
+*save all
 
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+*save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+*save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 
-dc VDS 0.7 1.1 1m
+AC DEC 10 1 1G
 
-let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+*let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+*let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 
-let a = deriv(vgs)
-let ao = -1/a
+*let a = deriv(vgs)
+*let ao = -1/a
 
 
 
