@@ -30,7 +30,7 @@ save all
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 
-dc VDS 0.2 1.8 1m
+dc VDS 0.52 1.48 1m
 
 let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
 let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]

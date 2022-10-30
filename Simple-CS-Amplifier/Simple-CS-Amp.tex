@@ -113,7 +113,7 @@ at $V_{GS}\approx 0.71$, $a_o \geq 40$.
 	\caption{$a_o$ vs $V_{GS}$}
 	\label{swing-in}
 \end{figure}
-Thus, the maximum symmetric output voltage is $0.52 \leq V_{DS} \leq 1.48$ for a total swing of $0.96V$. The corresponding input is $0.69 \leq V_{GS} \leq 0.71$ with a $20mV$ swing.
+Thus, the maximum symmetric output voltage is $0.52 \leq V_{DS} \leq 1.48$ for a total swing of $0.96V$. The corresponding input is $0.695 \leq V_{GS} \leq 0.71$ with a $15mV$ swing.
 
 \subsection{AC analysis}
 Using Fig. \ref{schem-large}, an AC sweep from $1 Hz$ to $1GHz$ is used to obtain Fig. \ref{vdb}. Using a MEAS directive, $f_u=104MHz$ which is close to our desired $f_u$. At low frequencies, the gain is $\approx 35dB$
@@ -160,7 +160,45 @@ To trim down the possible options, we use the plot below.
 	\caption{Transition frequency}
 	\label{vstar-ft-2}	
 \end{figure}
-Considering the two plots, we choose $V^*=0.19V$ and $L=0.23\mu m$ since it has the best $f_t$. The gain and swing at these values are also within the desired specifications. 
+Considering the two plots, we choose $V^*=0.19V$ and $L=0.23\mu m$ since it has the highest $f_t$. The gain and swing at these values are also within the required specifications. The obtained $f_t$ is $28GHz$.
+\subsection{Obtaining $g_m$ and $f_u$}
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{gm-vstar.png}
+	\caption{$g_m$ vs $V^*$}
+	\label{gm-vstar}	
+\end{figure}
+From Fig. \ref{gm-vstar}, $g_m=20.54mS$ at $V^*=0.19V$. The target unity-gain frequency is:
+\begin{equation*}
+	f_u = \frac{g_m}{2\pi C_L} = 653.81MHz
+\end{equation*}
+with $I_D=1.95mA$. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{fumax.png}
+	\caption{Unity-gain frequency}
+	\label{fu-vstar}	
+\end{figure}
+Looking at Fig. \ref{fu-vstar}, $f_u \approx 654MHz$. The desired $f_u$ is met. 
+\subsection{Output and input swing}
+\subsubsection{Output Swing}
+From the plot below, we can see that $a_o=40.32$ at $V_{DS}=0.7$. At $V_{DS}=1.1$, $a_o\approx 50$.
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{gain-fumax-vds.png}
+	\caption{$a_o$ vs $V_{DS}$}
+	\label{ao-fumax-vds}	
+\end{figure}
+\subsubsection{Input Swing}
+Sweeping $V_{DS}$ from $700mV$ to $1.1V$, we get the following $a_o$ vs $V_{GS}$ plot. 
+The input $V_{GS}$ that produces $700mV \leq V_{DS} \leq 1.1V$ ranges from $719mV$ to $727mV$. 
+The maximum swing is $8mV$. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{gain-fumax-vgs.png}
+	\caption{$a_o$ vs $V_{GS}$}
+	\label{ao-fumax-vgs}	
+\end{figure}
 
 
 

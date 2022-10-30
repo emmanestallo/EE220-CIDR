@@ -28,7 +28,7 @@ lab=#net2}
 N 780 -530 780 -430 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 620 -420 0 0 {name=M1
-L=0.25
+L=0.23
 W=99.9
 nf=1
 mult=1
@@ -75,10 +75,10 @@ let vstar = 2/gmoverid
 let gmro = gm*ro
 let ft = gm/(2*pi*cgg)
 
-wrdata charac-L=0.25.txt ft gmro vstar
+*wrdata charac-L=0.23.txt ft gmro vstar
 
-*meas dc gain find gmro when vstar=0.19
-*meas dc freq find ft when vstar=0.19
+meas dc gain find gmro when vstar=0.19
+meas dc freq find ft when vstar=0.19
 
 *meas DC gain FIND gmro WHEN vstar=0.3
 *meas DC freq FIND ft WHEN vstar=0.3 
