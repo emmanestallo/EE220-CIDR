@@ -38,7 +38,7 @@ The transconductance can be obtained from:
 \begin{equation*}
 	g_m = 2\pi f_u C_L
 \end{equation*}
-this gives us
+which results to
 \begin{equation*}
 	g_m = 3.14\; mS
 \end{equation*}
@@ -46,7 +46,7 @@ The current can be obtained from:
 \begin{equation*}
 	V^* = 2\cdot\left( \frac{g_m}{I_D}\right)^{-1} 
 \end{equation*} 
-and a $V^*$ of $200\; mV$ corresponds to a $g_m/I_D$ of 10. 
+a $V^*$ of $200\; mV$ corresponds to a $g_m/I_D$ of 10.
 
 \vspace{8pt}
 \noindent Thus, 
@@ -54,15 +54,14 @@ and a $V^*$ of $200\; mV$ corresponds to a $g_m/I_D$ of 10.
 	I_D = 314\; \mu A
 \end{equation*}
 \subsection{Choosing the length}
-To find the appropriate length, I did a DC sweep on VGS and checked if the intrinsic gain at 
-$V^*$ is $> 40$.  
+To find the appropriate length, $V_{GS}$ is swept from $0V$ to $1.8V$ and checked if the intrinsic gain at $V^*$ is $> 40$.  
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=\columnwidth]{schem.png}
 	\caption{Schematic diagram}
 	\label{schematic}
 \end{figure}
-At the minimum length, the intrinsic gain is lower than what is desired. We select $L=0.30\mu m$ since it satisfies the specifications. $L=0.25\mu m$ also meets the specifications. However, for a greater swing, the larger length is selected. 
+At the minimum length, the intrinsic gain is lower than what is desired. $L=0.30\mu m$ is selected since it satisfies the specifications. $L=0.25\mu m$ also meets the specifications. However, for a greater swing, the larger length is selected. 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[scale=0.40]{gmro.png}
@@ -78,7 +77,7 @@ The $V^*$ vs $I_D$ plot for a transistor with $W=1\mu m$, $L=0.30 \mu m$ is show
 \end{figure}
 \subsection{Scaling the width}
 A python script is used to calculate the scale factor $k_W$ that meets the required $I_D$. The width is scaled using $k_W$. Multiplying the width by $k_W$ scales $I_D$ by approximately the same factor. For this activity, $k_W=21$.
-To check, a MEAS directive is used. The required current is $I_D=314\mu A$, what we got is $I_D=345\mu A$, which is quite close. 
+To check, a MEAS directive is used. The required current is $I_D=314\mu A$. Due to some estimates, $I_D=345\mu A$ is obtained.  
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=\columnwidth]{vstar-scale-id.png}
@@ -92,8 +91,8 @@ To check, a MEAS directive is used. The required current is $I_D=314\mu A$, what
 	\caption{Schematic}
 	\label{schem-large}
 \end{figure}
-To get the input and output swing, we use the schematic in Fig. \ref{schem-large}. Since 
-$V_{GS}$ is a function of $V_{DS}$, we can plot $a_o$ vs $V_{DS}$ to get the maximum output
+To get the input and output swing, the schematic in Fig. \ref{schem-large} is used. Since 
+$V_{GS}$ is a function of $V_{DS}$, $a_o$ vs $V_{DS}$ can be plotted to get the maximum output
 swing and $a_o$ vs $V_{GS}$ to get the corresponding input swing. 
 
 \vspace{8pt}
@@ -116,7 +115,7 @@ at $V_{GS}\approx 0.71$, $a_o \geq 40$.
 Thus, the maximum symmetric output voltage is $0.52 \leq V_{DS} \leq 1.48$ for a total swing of $0.96V$. The corresponding input is $0.695 \leq V_{GS} \leq 0.71$ with a $15mV$ swing.
 
 \subsection{AC analysis}
-Using Fig. \ref{schem-large}, an AC sweep from $1 Hz$ to $1GHz$ is used to obtain Fig. \ref{vdb}. Using a MEAS directive, $f_u=104MHz$ which is close to our desired $f_u$. At low frequencies, the gain is $\approx 35dB$
+Using Fig. \ref{schem-large}, an AC sweep from $1 Hz$ to $1GHz$ is performed. The resulting magnitude response plot is shown in Fig. \ref{vdb}. Using a MEAS directive, $f_u=104MHz$, which is close to the desired $f_u$. At low frequencies, the gain is $\approx 35dB$
 which is $\approx 60\; V/V$
 \begin{figure}[H]
 	\centering 
@@ -129,16 +128,14 @@ These are my expected results. Since some values are estimated, there are slight
 
 \vspace{8pt}
 \section{CS Amplifier with High $f_t$} 
-To get a high $f_t$, we need a high $I_D$ and small $L$. Decreasing $L$ increases $f_t$ if $I_D$
-is kept constant. However, since there are no constraints on area and how high $I_D$ could be, the limit would be related to the maximum $W$ that can be used on the PDK. 
+To get a high $f_t$, a small $L$ and high power is required. Decreasing $L$ increases $f_t$ if $I_D$ is kept constant. However, since there are no constraints on area and how high $I_D$ could be, the limit would be related to the maximum $W$ that can be used on the PDK. 
 
 \subsection{Selecting the width}
-For this PDK, the highest width that can be used is $W=99.9\mu m$. We use this value to get 
-the maximum $I_D$. 
+For this PDK, the largest width that can be used is $W=99.9\mu m$. This value is used to get the maximum $I_D$. 
 
 \newpage 
 \subsection{Choosing the length and $V^*$}
-Ideally to get the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. We use Fig. \ref{schematic} to determine the appropriate length and $V^*$. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. We use $V_{DS}=0.7V$ for the simulation. 
+Ideally to get the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. $V_{DS}=0.7V$ is used for the simulation. 
 
 \vspace{8pt}
 \subsubsection{$a_o$ vs $V^*$} 
@@ -160,7 +157,7 @@ To trim down the possible options, we use the plot below.
 	\caption{Transition frequency}
 	\label{vstar-ft-2}	
 \end{figure}
-Considering the two plots, we choose $V^*=0.19V$ and $L=0.23\mu m$ since it has the highest $f_t$. The gain and swing at these values are also within the required specifications. The obtained $f_t$ is $28GHz$.
+Considering the two plots, $V^*=0.19V$ and $L=0.23\mu m$ are chosen since they lead to the highest $f_t$. The gain and swing at these values are also within the required specifications. The obtained $f_t$ is $28GHz$.
 \subsection{Obtaining $g_m$ and $f_u$}
 \begin{figure}[H]
 	\centering 
@@ -183,7 +180,7 @@ with $I_D=1.95mA$.
 Looking at Fig. \ref{fu-vstar}, $f_u \approx 654MHz$. The desired $f_u$ is met. At low frequencies, the gain is $33.19\; dB$ which corresponds to $45.66\; V/V$.
 \subsection{Output and input swing}
 \subsubsection{Output Swing}
-From the plot below, we can see that $a_o=40.32$ at $V_{DS}=0.7$. At $V_{DS}=1.1$, $a_o\approx 50$.
+From the plot below, it is seen that $a_o=40.32$ at $V_{DS}=0.7$. At $V_{DS}=1.1$, $a_o\approx 50$.
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=\columnwidth]{gain-fumax-vds.png}
@@ -191,7 +188,7 @@ From the plot below, we can see that $a_o=40.32$ at $V_{DS}=0.7$. At $V_{DS}=1.1
 	\label{ao-fumax-vds}	
 \end{figure}
 \subsubsection{Input Swing}
-Sweeping $V_{DS}$ from $700mV$ to $1.1V$, we get the following $a_o$ vs $V_{GS}$ plot. 
+Sweeping $V_{DS}$ from $700mV$ to $1.1V$, the following $a_o$ vs $V_{GS}$ plot is obtained. 
 The input $V_{GS}$ that produces $700mV \leq V_{DS} \leq 1.1V$ ranges from $719mV$ to $727mV$. 
 The maximum swing is $8mV$. 
 \begin{figure}[H]
@@ -202,7 +199,7 @@ The maximum swing is $8mV$.
 \end{figure}
 \subsection{Discussions}
 First, the choice of $V^*$ depends on both gain and desired $f_t$. If we increase $V^*$, we 
-can get a higher $f_t$ but the gain will decrease. To maximize $f_t$, The maximum $V^*$ that 
+can get a higher $f_t$ but the gain will decrease. To maximize $f_t$, the maximum $V^*$ that 
 satisfies both gain and swing should be chosen. This amplifier is designed to have an approximate output swing of $\pm 200mV$ with a DC level of $0.9V$ because of $f_t$ constraints. 
 
 \vspace{8pt}
