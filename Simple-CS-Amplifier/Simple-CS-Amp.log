@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.27)  31 OCT 2022 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.27)  1 NOV 2022 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -485,22 +485,22 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 36.
 
-<schem.png, id=88, 549.05125pt x 474.77374pt>
+<schem.png, id=92, 549.05125pt x 474.77374pt>
 File: schem.png Graphic file (type png)
 <use schem.png>
 Package pdftex.def Info: schem.png  used on input line 60.
 (pdftex.def)             Requested size: 252.0pt x 217.90594pt.
-<gmro.png, id=90, 552.0625pt x 497.86pt>
+<gmro.png, id=94, 552.0625pt x 497.86pt>
 File: gmro.png Graphic file (type png)
 <use gmro.png>
 Package pdftex.def Info: gmro.png  used on input line 67.
 (pdftex.def)             Requested size: 220.82108pt x 199.14047pt.
-<vstar-id.png, id=91, 600.2425pt x 501.875pt>
+<vstar-id.png, id=95, 600.2425pt x 501.875pt>
 File: vstar-id.png Graphic file (type png)
 <use vstar-id.png>
 Package pdftex.def Info: vstar-id.png  used on input line 74.
 (pdftex.def)             Requested size: 228.09451pt x 190.71448pt.
-<vstar-scale-id.png, id=92, 1102.1175pt x 494.84875pt>
+<vstar-scale-id.png, id=96, 1102.1175pt x 494.84875pt>
 File: vstar-scale-id.png Graphic file (type png)
 <use vstar-scale-id.png>
 Package pdftex.def Info: vstar-scale-id.png  used on input line 83.
@@ -509,161 +509,166 @@ Package pdftex.def Info: vstar-scale-id.png  used on input line 83.
 
 
  <./schem.png> <./gmro.png> <./vstar-id.png>]
-<schem_large.png, id=117, 851.18pt x 409.53pt>
+<schem_large.png, id=121, 851.18pt x 409.53pt>
 File: schem_large.png Graphic file (type png)
 <use schem_large.png>
 Package pdftex.def Info: schem_large.png  used on input line 90.
 (pdftex.def)             Requested size: 252.0pt x 121.24147pt.
-<ao-vds.png, id=119, 598.235pt x 498.86375pt>
+<ao-vds.png, id=123, 598.235pt x 498.86375pt>
 File: ao-vds.png Graphic file (type png)
 <use ao-vds.png>
 Package pdftex.def Info: ao-vds.png  used on input line 103.
 (pdftex.def)             Requested size: 179.47188pt x 149.66028pt.
-<ao-vgs.png, id=120, 597.23125pt x 499.8675pt>
+<ao-vgs.png, id=124, 597.23125pt x 499.8675pt>
 File: ao-vgs.png Graphic file (type png)
 <use ao-vgs.png>
 Package pdftex.def Info: ao-vgs.png  used on input line 111.
 (pdftex.def)             Requested size: 179.17075pt x 149.9614pt.
-<vdb.png, id=123, 1367.1075pt x 502.87875pt>
+<v1-sweep-1.png, id=126, 1496.59125pt x 500.87125pt>
+File: v1-sweep-1.png Graphic file (type png)
+<use v1-sweep-1.png>
+Package pdftex.def Info: v1-sweep-1.png  used on input line 121.
+(pdftex.def)             Requested size: 252.0pt x 84.33685pt.
+<vdb.png, id=129, 1367.1075pt x 502.87875pt>
 File: vdb.png Graphic file (type png)
 <use vdb.png>
-Package pdftex.def Info: vdb.png  used on input line 122.
+Package pdftex.def Info: vdb.png  used on input line 131.
 (pdftex.def)             Requested size: 252.0pt x 92.69348pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 130.
+(hyperref)                removing `math shift' on input line 139.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 130.
+(hyperref)                removing `subscript' on input line 139.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 130.
+(hyperref)                removing `math shift' on input line 139.
 
 [2 <./vstar-scale-id.png> <./schem_large.png> <./ao-vds.png> <./ao-vgs.png> <./
-vdb.png>]
+v1-sweep-1.png> <./vdb.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 137.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 137.
+(hyperref)                removing `math shift' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 137.
+(hyperref)                removing `superscript' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 142.
+(hyperref)                removing `math shift' on input line 149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 142.
+(hyperref)                removing `math shift' on input line 154.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 142.
+(hyperref)                removing `subscript' on input line 154.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 142.
+(hyperref)                removing `math shift' on input line 154.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 142.
+(hyperref)                removing `math shift' on input line 154.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 142.
+(hyperref)                removing `superscript' on input line 154.
 
-<vstar-ao-maxft.png, id=138, 462.528pt x 346.896pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 154.
+
+<vstar-ao-maxft.png, id=146, 462.528pt x 346.896pt>
 File: vstar-ao-maxft.png Graphic file (type png)
 <use vstar-ao-maxft.png>
-Package pdftex.def Info: vstar-ao-maxft.png  used on input line 145.
+Package pdftex.def Info: vstar-ao-maxft.png  used on input line 157.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 153.
+(hyperref)                removing `subscript' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 153.
+(hyperref)                removing `superscript' on input line 165.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 165.
 
-<vstar-ft-maxft.png, id=139, 462.528pt x 346.896pt>
+<vstar-ft-maxft.png, id=147, 462.528pt x 346.896pt>
 File: vstar-ft-maxft.png Graphic file (type png)
 <use vstar-ft-maxft.png>
-Package pdftex.def Info: vstar-ft-maxft.png  used on input line 156.
+Package pdftex.def Info: vstar-ft-maxft.png  used on input line 169.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 161.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 161.
+(hyperref)                removing `subscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 161.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 161.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 161.
+(hyperref)                removing `subscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 161.
+(hyperref)                removing `math shift' on input line 174.
 
-<gm-vstar.png, id=140, 1095.09125pt x 498.86375pt>
+<gm-vstar.png, id=148, 1095.09125pt x 498.86375pt>
 File: gm-vstar.png Graphic file (type png)
 <use gm-vstar.png>
-Package pdftex.def Info: gm-vstar.png  used on input line 164.
+Package pdftex.def Info: gm-vstar.png  used on input line 177.
 (pdftex.def)             Requested size: 252.0pt x 114.79713pt.
-<fumax.png, id=142, 1306.8825pt x 498.86375pt>
+<fumax.png, id=150, 1306.8825pt x 498.86375pt>
 File: fumax.png Graphic file (type png)
 <use fumax.png>
-Package pdftex.def Info: fumax.png  used on input line 176.
+Package pdftex.def Info: fumax.png  used on input line 189.
 (pdftex.def)             Requested size: 252.0pt x 96.19331pt.
-<gain-fumax-vds.png, id=144, 1087.06125pt x 499.8675pt>
+[3 <./vstar-ao-maxft.png> <./vstar-ft-maxft.png> <./gm-vstar.png> <./fumax.png>
+]
+<gain-fumax-vds.png, id=164, 1087.06125pt x 499.8675pt>
 File: gain-fumax-vds.png Graphic file (type png)
 <use gain-fumax-vds.png>
-Package pdftex.def Info: gain-fumax-vds.png  used on input line 186.
+Package pdftex.def Info: gain-fumax-vds.png  used on input line 199.
 (pdftex.def)             Requested size: 252.0pt x 115.87476pt.
-<gain-fumax-vgs.png, id=145, 895.345pt x 500.87125pt>
+<gain-fumax-vgs.png, id=165, 895.345pt x 500.87125pt>
 File: gain-fumax-vgs.png Graphic file (type png)
 <use gain-fumax-vgs.png>
-Package pdftex.def Info: gain-fumax-vgs.png  used on input line 196.
+Package pdftex.def Info: gain-fumax-vgs.png  used on input line 209.
 (pdftex.def)             Requested size: 252.0pt x 140.96904pt.
-[3 <./vstar-ao-maxft.png> <./vstar-ft-maxft.png> <./gm-vstar.png> <./fumax.png>
- <./gain-fumax-vds.png>]
-<vinvout.png, id=160, 1368.11125pt x 500.87125pt>
+<vinvout.png, id=166, 1368.11125pt x 500.87125pt>
 File: vinvout.png Graphic file (type png)
 <use vinvout.png>
-Package pdftex.def Info: vinvout.png  used on input line 204.
+Package pdftex.def Info: vinvout.png  used on input line 217.
 (pdftex.def)             Requested size: 252.0pt x 92.25465pt.
 
 
@@ -677,26 +682,25 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
-[4
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
+[4 <./gain-fumax-vds.png> <./gain-fumax-vgs.png> <./vinvout.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
 
- <./gain-fumax-vgs.png> <./vinvout.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
- (./Simple-CS-Amp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+(./Simple-CS-Amp.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 236.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 236.
 Package rerunfilecheck Info: File `Simple-CS-Amp.out' has not changed.
-(rerunfilecheck)             Checksum: 50141643D6E7B4E37B35538F69763D5E;1397.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
+(rerunfilecheck)             Checksum: 6CE23AD15FF0F7D3BC1F009D17BD2318;1472.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 236.
  ) 
 Here is how much of TeX's memory you used:
- 9189 strings out of 483183
- 137541 string characters out of 5966291
- 398987 words of memory out of 5000000
- 24010 multiletter control sequences out of 15000+600000
+ 9199 strings out of 483183
+ 137704 string characters out of 5966291
+ 400028 words of memory out of 5000000
+ 24017 multiletter control sequences out of 15000+600000
  564301 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,37p,306b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,37p,320b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -710,10 +714,10 @@ msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmri8a.pfb>
-Output written on Simple-CS-Amp.pdf (4 pages, 1037301 bytes).
+Output written on Simple-CS-Amp.pdf (4 pages, 1070163 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 

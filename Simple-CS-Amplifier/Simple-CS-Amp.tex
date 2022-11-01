@@ -112,7 +112,16 @@ at $V_{GS}\approx 0.71$, $a_o \geq 40$.
 	\caption{$a_o$ vs $V_{GS}$}
 	\label{swing-in}
 \end{figure}
-Thus, the maximum symmetric output voltage is $0.52 \leq V_{DS} \leq 1.48$ for a total swing of $0.96V$. The corresponding input is $0.695 \leq V_{GS} \leq 0.71$ with a $15mV$ swing.
+Thus, the maximum symmetric output voltage is $0.52 \leq V_{DS} \leq 1.48$ for a total swing of $0.96V$. The corresponding input is $0.6946 \leq V_{GS} \leq 0.7106$ with a $16mV$ swing.
+\vspace{8pt}
+\subsubsection{Input vs output}
+Shown in Fig. \ref{vinvout-1} is a sweep of $V1$ from $-8mV$ to $8mV$. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[width=\columnwidth]{v1-sweep-1.png}
+	\caption{$a_o$ vs $V_{GS}$}
+	\label{vinvout-1}
+\end{figure}
 
 \subsection{AC analysis}
 Using Fig. \ref{schem-large}, an AC sweep from $1 Hz$ to $1GHz$ is performed. The resulting magnitude response plot is shown in Fig. \ref{vdb}. Using a MEAS directive, $f_u=104MHz$, which is close to the desired $f_u$. At low frequencies, the gain is $\approx 35dB$
@@ -131,11 +140,14 @@ These are my expected results. Since some values are estimated, there are slight
 To get a high $f_t$, a small $L$ and high power is required. Decreasing $L$ increases $f_t$ if $I_D$ is kept constant. However, since there are no constraints on area and how high $I_D$ could be, the limit would be related to the maximum $W$ that can be used on the PDK. 
 
 \subsection{Selecting the width}
-For this PDK, the largest width that can be used is $W=99.9\mu m$. This value is used to get the maximum $I_D$. 
+There is a trade-off between power and frequency. The higher the power that is used, the higher the frequency the circuit could get. Since $V_{DD}$ is fixed, the current consumption can be increased to bring more power to the circuit --- this is done by increasing the width. 
 
-\newpage 
+
+\vspace{8pt}
+For this PDK, the largest width that can be used is $W=99.9\mu m$. This value is used to get the maximum $I_D$ that meets the specifications. All simulations for this part will use this value. 
+
 \subsection{Choosing the length and $V^*$}
-Ideally to get the highest $f_t$, we should select the minimum length. However, the minimum length does not have sufficient intrinsic gain. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. $V_{DS}=0.7V$ is used for the simulation. 
+Ideally to get the highest $f_t$, the minimum length should be selected. However, the minimum length does not have sufficient intrinsic gain. Since the load is an ideal current source, the gain is only limited by the lower bound $\approx 700mV$. $V_{DS}=0.7V$ is used for this characterization part. 
 
 \vspace{8pt}
 \subsubsection{$a_o$ vs $V^*$} 
@@ -146,11 +158,12 @@ For $0.20\mu m \leq L \leq 0.25\mu m$, the $a_o$ vs $V^*$ plot is shown below.
 	\caption{Intrinsic gain}
 	\label{vstar-ao-2}	
 \end{figure}
-Since we need $a_o > 40$, only lengths $\geq 0.22\mu m$ can be used. 
+Since the desired gain is $a_o > 40$, only lengths $\geq 0.22\mu m$ can be used. 
 
 \vspace{8pt}
 \subsubsection{$f_t$ vs $V^*$} 
-To trim down the possible options, we use the plot below. 
+To trim down the possible options, an $f_t$ vs $V^*$ plot is used. 
+ 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[width=\columnwidth]{vstar-ft-maxft.png}
