@@ -99,7 +99,7 @@ C {devices/gnd.sym} 200 -100 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 320 -100 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} 810 -270 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 810 -180 0 0 {name=l1 lab=GND}
-C {devices/code.sym} 70 -550 0 0 {name=NGSPICE 
+C {devices/code.sym} 120 -650 0 0 {name=NGSPICE 
 only_toplevel=false 
 value="
 
@@ -112,13 +112,13 @@ save all
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 
-dc VDS 0.52 1.48 1m
+dc V1 -8m 8m 1u
 
 let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
 let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
 
-let a = deriv(vgs) 
-let ao = -1/a
+*let a = deriv(vgs) 
+*let ao = -1/a
 
 
 *tran 10u 10m 

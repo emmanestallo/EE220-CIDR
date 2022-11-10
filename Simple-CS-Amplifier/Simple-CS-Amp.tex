@@ -229,8 +229,15 @@ The first design has $I_D = 314\mu A$. For this design, $I_D=1.95mA$. The $I_D$ 
 
 \vspace{8pt}
 \section{CS Amplifier with smallest power consumption}
+To minimize power consumption, the current should be decreased. This can be done by increasing the length. 
 
+\subsection{Choosing the length}
+The maximum length that can be used for this PDK is $99.9\mu m$. The length is set to its maximum value to get the least possible current. 
 
+\subsection{Selecting $V^*$} 
+A small $V^*$ corresponds to a more efficient circuit. $V^*$ is chosen such that the transistor operates near the sub-threshold region. For this, we select $V^* = 100mV$.
+
+\vspace{8pt}
 
 
 
