@@ -220,24 +220,21 @@ $v_{in}$ is swept from $-4mV$ to $4mV$ to get the corresponding $v_{out}$.
 \end{figure}
 
 \subsection{Discussions}
-First, the choice of $V^*$ depends on both gain and desired $f_t$. If we increase $V^*$, we 
-can get a higher $f_t$ but the gain will decrease. To maximize $f_t$, the maximum $V^*$ that 
-satisfies both gain and swing should be chosen. This amplifier is designed to have an approximate output swing of $\pm 200mV$ with a DC level of $0.9V$ because of $f_t$ constraints. 
+First, the choice of $V^*$ depends on both gain and desired $f_t$. It is possible to increase $V^*$ to get a higher $f_t$ but the gain will decrease. To maximize $f_t$, the maximum $V^*$ that satisfies both gain and swing should be chosen. This amplifier is designed to have an approximate output swing of $\pm 200mV$ with a DC level of $0.9V$ because of $f_t$ constraints. 
 
 \vspace{8pt}
-The first design has $I_D = 314\mu A$. For this design, $I_D=1.95mA$. The $I_D$ is more than 6 times higher. RF applications would benefit from a high $f_u$ but this might not be usable at all because of very high current consumption. 
+The first design has $I_D = 314\mu A$. For this design, $I_D=1.95mA$. The $I_D$ is more than 6 times higher. RF applications would benefit from a high $f_u$ but this might not be usable at all because of very high DC power consumption. 
 
 \vspace{8pt}
 \section{CS Amplifier with smallest power consumption}
-To minimize power consumption, the current should be decreased. This can be done by increasing the length. 
+To minimize power consumption, the current should be decreased. This can be done by increasing the length, or by subthreshold operation. 
 
-\subsection{Choosing the length}
-The maximum length that can be used for this PDK is $99.9\mu m$. The length is set to its maximum value to get the least possible current. 
-
-\subsection{Selecting $V^*$} 
-A small $V^*$ corresponds to a more efficient circuit. $V^*$ is chosen such that the transistor operates near the sub-threshold region. For this, we select $V^* = 100mV$.
-
-\vspace{8pt}
+\subsection{Choosing $V^*$, $I_{D}$, W, L}
+For this part of the activity, a unity-gain bandwidth $f_u = 10MHz$ is chosen arbitrarily. This determines the required $g_m$. A low unity-gain bandwidth translates to less power consumption. 
+\begin{equation*}
+	g_m = 2\pi f_u C_L
+\end{equation*}
+Similarly, $V^* = 100mV$ is selected to ensure near subthreshold operation. Considering both $g_m$ and $V^*$, the required $I_D$ can now be obtained. 
 
 
 

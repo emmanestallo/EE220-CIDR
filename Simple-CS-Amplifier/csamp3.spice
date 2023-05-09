@@ -1,0 +1,56 @@
+** sch_path: /home/emman/Desktop/Acads/EE220/Simple-CS-Amplifier/csamp3.sch
+**.subckt csamp3 vdd vdd vdd out
+*.iopin vdd
+*.iopin vdd
+*.iopin vdd
+*.opin out
+XM1 net2 net1 GND GND sky130_fd_pr__nfet_01v8_lvt L=2 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+E1 net1 GND net2 net3 1000
+I0 vdd net2 4.10n
+VDS net3 GND 0.9
+V2 vdd GND 0
+XM2 out net4 GND GND sky130_fd_pr__nfet_01v8_lvt L=2 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+I1 vdd out 4.10n
+V1 net4 net1 SIN(0 11m 1k) AC 1 DC 0
+C1 out GND 5p m=1
+**** begin user architecture code
+
+
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.option wnflag=1 scale=1e-6
+
+.control
+save all
+
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+
+dc VDS 0.2 1.8 1m
+
+let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+
+let a = deriv(vgs)
+let ao = -1/a
+
+*plot v(out)
+
+*tran 10u 10m
+
+*plot ao
+
+
+
+*wrdata ao-L=0.40.txt ao
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

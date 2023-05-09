@@ -28,7 +28,7 @@ lab=#net2}
 N 780 -530 780 -430 {
 lab=#net2}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 620 -420 0 0 {name=M1
-L=99.9
+L=0.5
 W=1
 nf=1
 mult=1
@@ -43,7 +43,7 @@ spiceprefix=X
 }
 C {devices/vsource.sym} 540 -370 0 0 {name=VGS value=0.9}
 C {devices/gnd.sym} 640 -340 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 780 -400 0 0 {name=VDS value=0.7}
+C {devices/vsource.sym} 780 -400 0 0 {name=VDS value=0.9}
 C {devices/gnd.sym} 540 -320 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 780 -340 0 0 {name=l1 lab=GND}
 C {devices/code.sym} 270 -490 0 0 {name=NGSPICE 
