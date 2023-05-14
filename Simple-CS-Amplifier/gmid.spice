@@ -45,6 +45,8 @@ let ft = gm/(2*pi*cgg)
 *meas DC freq FIND ft WHEN vstar=0.3
 *meas DC current FIND id WHEN vstar=0.3
 
+plot gmro
+
 
 
 .endc

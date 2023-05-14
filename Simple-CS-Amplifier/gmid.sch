@@ -63,7 +63,7 @@ save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[w]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
 save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vth]
 
-dc VGS 0 1.8 1m
+dc VGS 0 1.8 1m 
 
 let id = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
 let gm = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
@@ -85,6 +85,8 @@ let ft = gm/(2*pi*cgg)
 *meas DC gain FIND gmro WHEN vstar=0.3
 *meas DC freq FIND ft WHEN vstar=0.3 
 *meas DC current FIND id WHEN vstar=0.3
+
+plot gmro
 
 
 

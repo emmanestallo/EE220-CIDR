@@ -66,7 +66,7 @@ lab=GND}
 N 420 -210 420 -150 {
 lab=#net1}
 N 480 -210 500 -210 {
-lab=#net4}
+lab=in}
 N 540 -260 620 -260 {
 lab=out}
 N 620 -260 660 -260 {
@@ -77,8 +77,14 @@ N 660 -260 700 -260 {
 lab=out}
 N 660 -170 660 -120 {
 lab=GND}
+N 470 -250 480 -250 {
+lab=in}
+N 480 -250 490 -250 {
+lab=in}
+N 490 -250 490 -210 {
+lab=in}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 300 -210 0 0 {name=M1
-L=2
+L=0.5
 W=1
 nf=1
 mult=1
@@ -92,12 +98,12 @@ model=nfet_01v8_lvt
 spiceprefix=X
 }
 C {devices/vcvs.sym} 200 -160 0 0 {name=E1 value=1000}
-C {devices/isource.sym} 320 -310 0 0 {name=I0 value=4.10n}
+C {devices/isource.sym} 320 -310 0 0 {name=I0 value=3n}
 C {devices/vsource.sym} 90 -100 0 0 {name=VDS value=0.9}
 C {devices/gnd.sym} 90 -50 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 200 -100 0 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 320 -100 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 810 -270 0 0 {name=V2 value=0}
+C {devices/vsource.sym} 810 -270 0 0 {name=V2 value=1.8}
 C {devices/gnd.sym} 810 -180 0 0 {name=l1 lab=GND}
 C {devices/code.sym} 60 -650 0 0 {name=NGSPICE 
 only_toplevel=false 
@@ -109,17 +115,24 @@ value="
 .control
 save all
 
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gm]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[id]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gds]
+*save @m.xm2.msky130_fd_pr__nfet_01v8_lvt[cgg]
 
-dc VDS 0.2 1.8 1m
+AC dec 10 1 100Meg
 
-let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
+*let vgs = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vgs]
+*let vds = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[vds] 
+*let gm = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[gm]
+*let id = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[id]
+*let ro = 1/@m.xm2.msky130_fd_pr__nfet_01v8_lvt[gds]
+*let cgg = @m.xm2.msky130_fd_pr__nfet_01v8_lvt[cgg]
 
-let a = deriv(vgs) 
-let ao = -1/a
-
+*let ao = gm*ro
+*let ft = gm/(2*pi*cgg)
 *plot v(out)
 
 *tran 10u 10m 
@@ -134,7 +147,7 @@ let ao = -1/a
 C {devices/iopin.sym} 320 -380 0 0 {name=p1 lab=vdd}
 C {devices/iopin.sym} 810 -360 0 0 {name=p1 lab=vdd}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 520 -210 0 0 {name=M2
-L=2
+L=0.5
 W=1
 nf=1
 mult=1
@@ -147,10 +160,11 @@ sa=0 sb=0 sd=0
 model=nfet_01v8_lvt
 spiceprefix=X
 }
-C {devices/isource.sym} 540 -310 0 0 {name=I1 value=4.10n}
+C {devices/isource.sym} 540 -310 0 0 {name=I1 value=3n
+}
 C {devices/iopin.sym} 540 -380 0 0 {name=p1 lab=vdd}
 C {devices/gnd.sym} 540 -120 0 0 {name=l1 lab=GND}
-C {devices/vsource.sym} 450 -210 1 0 {name=V1 value="SIN(0 11m 1k) AC 1 DC 0"}
+C {devices/vsource.sym} 450 -210 1 0 {name=vin value= "DC 0 AC 1"}
 C {devices/opin.sym} 700 -260 0 0 {name=p1 lab=out}
 C {devices/capa.sym} 660 -200 0 0 {name=C1
 m=1
@@ -158,3 +172,4 @@ value=5p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 660 -120 0 0 {name=l1 lab=GND}
+C {devices/lab_pin.sym} 470 -250 0 0 {name=l1 sig_type=std_logic lab=in}

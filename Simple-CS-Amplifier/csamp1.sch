@@ -78,8 +78,8 @@ lab=out}
 N 660 -170 660 -120 {
 lab=GND}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 300 -210 0 0 {name=M1
-L=0.30
-W=21
+L=1
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -117,8 +117,8 @@ dc V1 -8m 8m 1u
 let vgs = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
 let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds] 
 
-*let a = deriv(vgs) 
-*let ao = -1/a
+let a = deriv(vgs) 
+let ao = -1/a
 
 
 *tran 10u 10m 
@@ -133,8 +133,8 @@ let vds = @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
 C {devices/iopin.sym} 320 -380 0 0 {name=p1 lab=vdd}
 C {devices/iopin.sym} 810 -360 0 0 {name=p1 lab=vdd}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 520 -210 0 0 {name=M2
-L=0.30
-W=21
+L=1
+W=10
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 

@@ -230,12 +230,54 @@ The first design has $I_D = 314\mu A$. For this design, $I_D=1.95mA$. The $I_D$ 
 To minimize power consumption, the current should be decreased. This can be done by increasing the length, or by subthreshold operation. 
 
 \subsection{Choosing $V^*$, $I_{D}$, W, L}
-For this part of the activity, a unity-gain bandwidth $f_u = 10MHz$ is chosen arbitrarily. This determines the required $g_m$. A low unity-gain bandwidth translates to less power consumption. 
-\begin{equation*}
-	g_m = 2\pi f_u C_L
-\end{equation*}
-Similarly, $V^* = 100mV$ is selected to ensure near subthreshold operation. Considering both $g_m$ and $V^*$, the required $I_D$ can now be obtained. 
+The first thing to do is to find the largest possible length that provides a high gain in the subthreshold region. 
 
+\vspace{8pt}
+The gain is maximum at around $L=0.5$. This is set as the length. After a parametric sweep on the drain current. It turns out that the gain requirement is met at $I_{D}=3nA, W=1um$ 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.35]{id3n.png}
+	\caption{$a_o$ vs $V_{DS}$}
+	\label{in_3d}	
+\end{figure}
+with $V_{GS} \approx 300mV$. Additionally, $g_m/I_D=27$ which corresponds to $V^* \approx 70m$ indicates a subthreshold operation.
+
+\newpage 
+\subsection{Input and Output Swing}
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.4]{vinvout-3.png}
+	\caption{$v_{in}$ vs $v_{out}$}
+	\label{vinvout-3}	
+\end{figure}
+
+\subsubsection{Output Swing}
+The minimum output voltage that satisfies the gain requirement is $V_{out} \approx 130mV$. 
+Shown below is the gain vs output voltage plot. This yields the maximum symmetric output swing $\approx 1.54V$
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.4]{ao_vds3.png}
+	\caption{$a_{o}$ vs $v_{out}$}
+	\label{ao_vds-3}	
+\end{figure} 
+
+\subsubsection{Input Swing} 
+The corresponding input swing is $\approx 18mV$
+
+\subsection{AC Analysis}
+Due to the low $I_D$, the unity-gain frequency is only at around $5kHz$. This is expected since the device also operates at the subthreshold region. Additionally, $f_t \approx 10MS$. 
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.4]{vdb3.png}
+	\caption{Unity-gain frequency}
+	\label{vdb3}	
+\end{figure} 
+
+\subsection{Overall Discussions}
+As it turns out, it is possible to arbitrarily set the current. SPICE will generate the necessary $V_{GS}$ accordingly depending on the width and length values. Increasing the width changes the region of operation since it also affects $V_{GS}$ for a certain fixed $I_D$. 
+
+\vspace{8pt}
+For the last activity, both transit and unity-gain frequencies are far smaller compared to their values from the first two activities. The current is also smaller by several orders of magnitude. I think this low-power consumption is good if speed is not required. Since the device is too slow, I don't think this is usable at all for any industrial application. 
 
 
 
