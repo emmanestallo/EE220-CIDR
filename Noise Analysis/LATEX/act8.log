@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.4)  10 SEP 2023 17:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.6.4)  10 SEP 2023 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -473,11 +473,28 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<gm-vstar.png, id=16, 738.76pt x 380.42125pt>
+<gm-vstar.png, id=24, 738.76pt x 380.42125pt>
 File: gm-vstar.png Graphic file (type png)
 <use gm-vstar.png>
 Package pdftex.def Info: gm-vstar.png  used on input line 32.
 (pdftex.def)             Requested size: 236.40802pt x 121.73727pt.
+<noise-spectrum-35.png, id=26, 995.72pt x 564.1075pt>
+File: noise-spectrum-35.png Graphic file (type png)
+<use noise-spectrum-35.png>
+Package pdftex.def Info: noise-spectrum-35.png  used on input line 42.
+(pdftex.def)             Requested size: 238.97768pt x 135.38855pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\gamma' on input line 46.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 46.
 
 
 ** Conference Paper **
@@ -490,42 +507,43 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 41.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 61.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-
- <./gm-vstar.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 41.
-
-(./act8.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 41.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 41.
+ <./gm-vstar.png> <./noise-spectrum-35.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 61.
+ (./act8.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 61.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 61.
 Package rerunfilecheck Info: File `act8.out' has not changed.
-(rerunfilecheck)             Checksum: A5737770ACA58E585874A5E9F385CFC4;169.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 41.
+(rerunfilecheck)             Checksum: FC6FB63D07276AE9B82A940CE87441D3;309.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 61.
  ) 
 Here is how much of TeX's memory you used:
- 9038 strings out of 483183
- 135174 string characters out of 5966293
- 395400 words of memory out of 5000000
- 23908 multiletter control sequences out of 15000+600000
+ 9050 strings out of 483183
+ 135428 string characters out of 5966293
+ 398450 words of memory out of 5000000
+ 23916 multiletter control sequences out of 15000+600000
  564301 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,37p,227b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,9n,37p,282b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on act8.pdf (1 page, 96812 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on act8.pdf (1 page, 149850 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 92 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,5 @@
-v {xschem version=3.1.0 file_version=1.2 }
+v {xschem version=3.1.0 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -44,22 +45,13 @@ plot 10*log10(onoise_spectrum)
 setplot noise2
 print onoise_total
 
-alter @m.xm1.msky130_fd_pr__nfet_01v8_lvt[l] = 0.4
-noise v(io) vgs dec 100 1 100G
-
-setplot noise3
-plot 10*log10(onoise_spectrum)
-
-setplot noise4
-print onoise_total
-
 .endc
 " }
 C {devices/ipin.sym} 1090 -360 0 0 {name=p1 lab=g1}
 C {devices/iopin.sym} 1330 -530 0 0 {name=p2 lab=d1}
 C {devices/gnd.sym} 1180 -230 0 0 {name=l3 lab=GND}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 1160 -360 0 0 {name=M1
-L=0.3
+L=0.35
 W=10
 nf=10
 mult=1

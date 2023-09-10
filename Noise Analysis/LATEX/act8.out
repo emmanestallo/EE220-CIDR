@@ -1,3 +1,5 @@
 \BOOKMARK [1][-]{section.1}{Transistor Noise}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{NMOS Noise}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{PMOS Noise}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Simulations}{subsection.1.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.1.2}{Estimating }{subsection.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{PMOS Noise}{section.1}% 5
