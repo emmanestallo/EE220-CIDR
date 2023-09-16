@@ -45,17 +45,42 @@ Flicker noise dominates the range $f < 500MHz$ whereas thermal noise dominates t
 \end{figure}
 \subsubsection{Estimating $\gamma$} Recall that in the absence of flicker noise, and assuming $\alpha=1$
 \begin{equation*}
-	\overline{i_{od}^{2}} = 4kT\gamma g_{m}
+	\overline{i_{dn}^{2}} = 4kT\gamma g_{m} \Delta f
 \end{equation*}
 The total integrated noise power is equal to
 \begin{align*}
-	P_{i,noise} &= \int_{f1}^{f2}\overline{i_{od}^{2}}\;df \\
+	P_{i,noise} &= \int_{f1}^{f2}\overline{i_{dn}^{2}}\;df \\
 	&= \int_{f1}^{f2} 4kT\gamma g_{m}\; df \\
-	&= 4kT\gamma g_m \cdot (f_2 - f_1)
+	&= 4kT\gamma g_m \cdot (f_2 - f_1) 
 \end{align*}
-This means that if the integrated output noise power is obtained at the region where thermal noise is dominant, it is possible to directly compute for $\gamma$. To estimate, the total output noise power with 1-GHz bandwidth centered at around 90-GHz will be chosen. Since
+This means that if the integrated drain current noise power is obtained at the region where thermal noise is dominant, it is possible to directly compute for $\gamma$. To estimate the value of $\gamma$, the total output noise power with 10-GHz bandwidth from 90-GHz to 100-GHz is chosen. 
+\begin{equation*}
+	\gamma = \frac{P_{i,noise}}{4kTg_m(f_2-f_1)} 
+\end{equation*}
+In this case, 
+\begin{equation*}
+	\gamma \approx \frac{5.57E-13}{4kT\cdot 2.44E-3 \cdot 10E+9} = 1.375
+\end{equation*}
+We know that the total drain current noise is given by: 
+\begin{align*}
+		\overline{i_{dn}^{2}} &= \frac{K_f I_D}{C_{ox}L^2} \cdot \frac{\Delta f}{f} + 4kT\gamma g_{m} \Delta f \\    
+		P_{i,noise} &= \int_{f1}^{f2}\overline{i_{dn}^{2}}\;df \\
+		&= \frac{K_f I_D}{C_{ox}L^2} ln \left(\frac{f_2}{f_1} \right) + 4kT\gamma g_m \cdot (f_2 - f_1)
+\end{align*}
+In the simulation results, $P_{i,noise} = 6.336E-12$ 
+By substituting the known values with $f_2 - f_1 = 100G$,  
+\begin{equation*}
+	\frac{K_f}{C_{ox}} = 8.439E-24
+\end{equation*}
+Upon increasing the length, the integrated drain current noise power is reduced. The flicker noise corner is at almost the same frequency. The reduction might be explained by the reduction in $g_m$ and $I_D$. Additionally, the flicker noise is inversely proportional to the square of the length. 
 
+\newpage
 \subsection{PMOS Noise}
+
+
+
+
+
 
 
 \end{document}\textsl{}

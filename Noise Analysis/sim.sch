@@ -51,7 +51,7 @@ C {devices/ipin.sym} 1090 -360 0 0 {name=p1 lab=g1}
 C {devices/iopin.sym} 1330 -530 0 0 {name=p2 lab=d1}
 C {devices/gnd.sym} 1180 -230 0 0 {name=l3 lab=GND}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 1160 -360 0 0 {name=M1
-L=0.35
+L=0.45
 W=10
 nf=10
 mult=1
