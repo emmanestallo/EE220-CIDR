@@ -1,0 +1,44 @@
+** sch_path: /home/arficx/Desktop/codes/EE220-CIDR/Noise Analysis/sim_pmos
+**.subckt sim_pmos
+V1 GND vgs 900m
+XM1 vds vgs GND GND sky130_fd_pr__pfet_01v8_lvt L=0.35 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+V2 GND vds 900m
+**** begin user architecture code
+
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.option wnflag=1
+
+.control
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gm]
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gds]
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[cgg]
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[vdsat]
+save @m.xm1.msky130_fd_pr__pfet_01v8_lvt[vgs]
+
+dc v1 0 1.8 1m
+
+let gm = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gm]
+let id = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[id]
+let gds = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[gds]
+let cgg = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[cgg]
+let vdsat = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[vdsat]
+let vgs = @m.xm1.msky130_fd_pr__pfet_01v8_lvt[vgs]
+
+let gmro = gm/gds
+let ft = gm/(2*pi*cgg)
+let gmoverid = gm/id
+let vstar = 2/gmoverid
+
+.endc
+
+
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
