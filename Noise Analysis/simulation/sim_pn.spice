@@ -1,0 +1,36 @@
+** sch_path: /home/arficx/Desktop/codes/EE220-CIDR/Noise Analysis/sim_pn.sch
+**.subckt sim_pn g1 d1
+*.ipin g1
+*.iopin d1
+XM1 d1 g1 GND GND sky130_fd_pr__pfet_01v8_lvt L=0.45 W=10 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+**** begin user architecture code
+
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.option wnflag = 1 scale=1e-6
+
+vgs g1 0 dc=-0.9 ac=1
+vds d1 0 dc=-0.9
+hout io 0 vds 1
+
+.control
+save all
+
+set sqrnoise
+noise v(io) vgs dec 100 1 100G
+
+setplot noise1
+plot 10*log10(onoise_spectrum)
+
+setplot noise2
+print onoise_total
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
